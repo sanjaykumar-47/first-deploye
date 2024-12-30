@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin: 20px 0;
+    font-size: 2.5em;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input[type="file"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Result Section */
+h2 {
+    text-align: center;
+    color: #27ae60;
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+p {
+    max-width: 600px;
+    margin: 10px auto;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Links */
+a {
+    display: inline-block;
+    margin: 10px 5px;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* Responsive Boxes */
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    button {
+        font-size: 0.9em;
+    }
+}
+
+    </style>
+    <title>Disease Recognition</title>
+</head>
+<body>
+    <h1>Disease Recognition</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="image">Upload an Image:</label>
+        <input type="file" name="image" id="image" required><br><br>
+        <label for="language">Select Language:</label>
+        <select name="language" id="language">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            <option value="ta">Tamil</option>
+            <option value="hi">Hindi</option>
+            <option value="ml">Malayalam</option>
+        </select><br><br>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction_result %}
+        <h2>Prediction Result: {{ prediction_result }}</h2>
+        <p><strong>Description:</strong> {{ disease_description }}</p>
+        {% if translated_description %}
+            <p><strong>Translated Description:</strong> {{ translated_description }}</p>
+        {% endif %}
+    {% endif %}
+    <a href="/">Home</a> | <a href="/about">About</a> 
+</html>
+

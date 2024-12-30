@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f9f9;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-top: 20px;
+    font-size: 2.5em;
+}
+
+p {
+    margin: 20px;
+    font-size: 1.2em;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul {
+    list-style-type: square;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+    font-size: 1.2em;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    p, li {
+        font-size: 1em;
+    }
+
+    ul {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p, li {
+        font-size: 0.9em;
+    }
+
+    ul {
+        max-width: 95%;
+    }
+}
+
+    </style>
+    <title>About - Plant Disease Recognition</title>
+</head>
+<body>
+    <h1>About</h1>
+    <p>This dataset consists of about 87K RGB images of healthy and diseased crop leaves categorized into 38 classes.</p>
+    <ul>
+        <li>Train: 70,295 images</li>
+        <li>Validation: 17,572 images</li>
+        <li>Test: 33 images</li>
+    </ul>
+    <a href="/">Home</a> | <a href="/disease_recognition">Disease Recognition</a>
+</body>
+</html>
